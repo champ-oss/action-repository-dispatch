@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: repository dispatch
-        uses: champ-oss/action-repository-dispatch@acbe7038b9f71d2d397f3f2688d7449cf9da226f
+        uses: champ-oss/action-repository-dispatch@69a9fec900cc061cbbaff06d4b86b5da93d9308b
         with:
           GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
           REPO_NAME: "action-repository-dispatch"
