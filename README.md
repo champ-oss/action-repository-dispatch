@@ -31,7 +31,7 @@ Summary: This github action is used to create an event for github action reposit
 
 ## Usage
 
-* in progress
+* usage workflows located at example/build.yml and example/test.yml
 
 ## Project Status
 Project is: _in_progress_ 
