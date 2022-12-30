@@ -10,11 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: repository dispatch
-        uses: champ-oss/action-repository-dispatch@main
+        uses: champ-oss/action-repository-dispatch@69a9fec900cc061cbbaff06d4b86b5da93d9308b
         with:
           GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
           REPO_NAME: "action-repository-dispatch"
           ORG_NAME: "champ-oss"
           EVENT: "build-event"
           GITHUB_SHA: "${{ github.sha }}"
-          GITHUB_REF: "${{ github.ref }}"
+          GITHUB_REF_NAME: "${{ github.ref_name }}"

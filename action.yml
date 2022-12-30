@@ -14,7 +14,7 @@ inputs:
   REPO_NAME:
     description: 'repo name'
     required: true
-  GITHUB_REF:
+  GITHUB_REF_NAME:
     description: 'git ref'
     required: true
   GITHUB_SHA:
@@ -37,7 +37,7 @@ runs:
         EVENT: ${{ inputs.EVENT }}
         ORG_NAME: ${{ inputs.ORG_NAME }}
         REPO_NAME: ${{ inputs.REPO_NAME }}
-        GITHUB_REF: ${{ inputs.GITHUB_REF }}
+        GITHUB_REF_NAME: ${{ inputs.GITHUB_REF_NAME }}
         GITHUB_SHA: ${{ inputs.GITHUB_SHA }}
       run: |
         python ${GITHUB_ACTION_PATH}/action-repository-dispatch.py
