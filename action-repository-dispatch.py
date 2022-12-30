@@ -14,15 +14,14 @@ def main():
     event = os.environ.get("EVENT")
     github_ref = os.environ.get("GITHUB_REF")
     github_sha = os.environ.get("GITHUB_SHA")
-    version = os.environ.get("VERSION")
 
     url = "https://api.github.com/repos/" + org_name + "/" + repo_name + "/dispatches"
     print(url)
 
+    # custom client payload, add more key:value here.
     payload = {
         "event_type": event,
         "client_payload": {
-            "version": version,
             "ref": github_ref,
             "sha": github_sha,
         }

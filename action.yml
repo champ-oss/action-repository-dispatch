@@ -14,9 +14,6 @@ inputs:
   REPO_NAME:
     description: 'repo name'
     required: true
-  VERSION:
-    description: 'client payload data'
-    required: true
   GITHUB_REF:
     description: 'git ref'
     required: true
@@ -26,14 +23,20 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: run python script
+    - name: install python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: install python libs
+      shell: bash
+      run: cd ${{github.action_path}} && pip3 install -r requirements.txt
+    - name: run python action script
       shell: bash
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         EVENT: ${{ inputs.EVENT }}
         ORG_NAME: ${{ inputs.ORG_NAME }}
         REPO_NAME: ${{ inputs.REPO_NAME }}
-        VERSION: ${{ inputs.VERSION }}
         GITHUB_REF: ${{ inputs.GITHUB_REF }}
         GITHUB_SHA: ${{ inputs.GITHUB_SHA }}
       run: |
