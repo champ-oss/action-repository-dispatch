@@ -17,4 +17,4 @@ jobs:
           ORG_NAME: "champ-oss"
           EVENT: "build-event"
           GITHUB_SHA: "${{ github.sha }}"
-          GITHUB_REF: "${{ github.ref }}"
+          GITHUB_REF_NAME: "${{ github.ref_name }}"
